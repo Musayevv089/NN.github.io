@@ -31,9 +31,10 @@
     top: 45%;
     left: 52%;
     transform: translate(-50%, -50%);
-    width: 100px; /* Şəklin ölçüsü */
+    width: 300px; /* Şəklin ölçüsü */
     z-index: 2; /* Digər elementlərin üstündə görünsün */
 }
+
     </style>
 </head>
 <body>
@@ -41,25 +42,70 @@
     
     <img src="https://github.com/Musayevv089/NN.github.io/blob/main/Foto/image-removebg-preview%20(12).png?raw=true" class="kitty" id="kitty5" alt="Hello Kitty">
 
-        <div id="hearts"></div>
 
+    <style>
+        body {
+            background-color: #ff8fb4;
+            overflow: hidden;
+        }
+    
+        #hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: moveHeart 3s linear infinite, fadeOut 3s ease-in-out forwards;
+        }
+    
+        @keyframes moveHeart {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(calc(-50vw + 100px), calc(-50vh + 100px)) rotate(180deg);
+            }
+            100% {
+                transform: translate(calc(50vw - 100px), calc(50vh - 100px)) rotate(360deg);
+            }
+        }
+    
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    
+    <div id="hearts"></div>
+    
     <script>
-        // Ürəklər animasiyası
         function createHearts() {
             const heart = document.createElement("div");
             heart.className = "heart";
             heart.innerHTML = "❤️";
             heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            heart.style.top = Math.random() * 100 + "vh";
+            heart.style.fontSize = Math.random() * 20 + 20 + "px";
             document.getElementById("hearts").appendChild(heart);
-            
+    
             setTimeout(() => {
                 heart.remove();
-            }, 5000);
+            }, 3000);
         }
         
-        setInterval(createHearts, 300);
+        setInterval(createHearts, 500);
     </script>
     
+
 </body>
 </html>
