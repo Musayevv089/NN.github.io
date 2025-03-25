@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Beli</title>
+    <title>Cavab Səhifəsi</title>
     <style>
         body {
             text-align: center;
-            background: #ff8fb4;
+            background: #fff0f5;
             padding: 20px;
             font-family: Arial;
         }
@@ -15,20 +15,24 @@
             border-radius: 15px;
             overflow: hidden;
         }
-        video {
+        iframe {
             width: 50%;
+            height: 450px; /* Ölçüsünü özəlləşdirin */
+            border: none;
             box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
         }
     </style>
 </head>
 <body>
-    <h1>Cavabın "Bəli" olduğunu bilirdim eziziiiimmmmm! ❤️</h1>
+    <h1>Cavabın "Bəli" olduğunu bilirdim! ❤️</h1>
     
     <div class="video-container">
-        <!-- ÖZ VİDEOYUNUZUN ADINI YAZIN -->
-        <video controls autoplay loop muted>
-            <source src="./Kamerayı öpen kedi.mp4" type="video/mp4">
-        </video>
+        <!-- YouTube Video (VIDEO_ID-ni dəyişin) -->
+        <iframe 
+            src="https://www.youtube.com/watch?v=c9T9kEc3Pgw&ab_channel=%F0%9D%95%AE%F0%9D%96%8D%F0%9D%96%8A%F0%9D%96%97%F0%9D%95%AD%F0%9D%96%8E%F0%9D%96%91D" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
     </div>
 </body>
 </html>
